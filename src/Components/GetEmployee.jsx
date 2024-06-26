@@ -8,7 +8,7 @@ const GetEmployee = () => {
       fetchData();
     }, []);
     const fetchData = async () => {
-      axios
+      await axios
         .get("https://nodejsday4.onrender.com/api/getallemployee")
         .then((res) => {
           setgetcallData(res.data.result);
@@ -27,17 +27,24 @@ const GetEmployee = () => {
               <div className="card-body">
                 <h5 className="card-title">{ele._id}</h5>
                 <h6 className="card-subtitle mb-2 text-body-secondary">
-                  {ele.employeeFirstName}
+                  {ele.firstName}
                 </h6>
                 <h6 className="card-subtitle mb-2 text-body-secondary">
-                  {ele.employeeLastName}
+                  {ele.lastName}
                 </h6>
                 <h6 className="card-subtitle mb-2 text-body-secondary">
-                  {ele.employeeEmail}
+                  {ele.designation}
                 </h6>
                 <h6 className="card-subtitle mb-2 text-body-secondary">
-                  {ele.employeeDesignation}
+                  {ele.role}
                 </h6>
+                <h6 className="card-subtitle mb-2 text-body-secondary">
+                  {ele.email}
+                </h6>
+                <h6 className="card-subtitle mb-2 text-body-secondary">
+                  {ele.password}
+                </h6>
+
               </div>
             </div>
           </div>

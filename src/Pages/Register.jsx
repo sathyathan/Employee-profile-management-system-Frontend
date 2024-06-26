@@ -7,9 +7,8 @@ import {useNavigate } from "react-router-dom";
 const Register = () => {
     const[firstname,setFirstName]=useState('')
     const[lastname,setLastName]=useState('')
-    const[role,setRole]=useState('')
-    const[batch,setBatch]=useState('')
     const[designation,setDesignation]=useState('')
+    const[role,setRole]=useState('')
     const[email,setEmail]=useState('')
     const[password,setPassword]=useState('')
     const[msg,setMsg]=useState('')
@@ -17,7 +16,7 @@ const Register = () => {
 
     const handleSubmit=async(e)=>{
      e.preventDefault();
-     const payload={firstname,lastname,role,batch,designation,email,password};
+     const payload={firstname,lastname,designation,role,email,password};
     
     await axios.post("http://localhost:5000/api/employee/register-employee",payload)
     .then((res)=>setMsg(res.data.message))
@@ -63,15 +62,15 @@ navigate("/login");
             />
           </p>
           <p>
-            <label htmlFor="batch">Batch:</label>
+            <label htmlFor="designation">Designation:</label>
             <input
               type="text"
-              name="batch"
-              id="batch"
-              placeholder="Enter Your batch"
+              name="designation"
+              id="designation"
+              placeholder="Enter Your designation"
               required
-              value={batch}
-              onChange={(e) => setBatch(e.target.value)}
+              value={designation}
+              onChange={(e) => setDesignation(e.target.value)}
             />
           </p>
           <p>
@@ -86,18 +85,7 @@ navigate("/login");
               onChange={(e) => setRole(e.target.value)}
             />
           </p>
-          <p>
-            <label htmlFor="designation">Designation:</label>
-            <input
-              type="text"
-              name="designation"
-              id="designation"
-              placeholder="Enter Your designation"
-              required
-              value={designation}
-              onChange={(e) => setDesignation(e.target.value)}
-            />
-          </p>
+
           <p>
             <label htmlFor="email">Email:</label>
             <input
@@ -111,7 +99,7 @@ navigate("/login");
             />
           </p>
           <p>
-            <label htmlFor="Password">Password:</label>
+            <label htmlFor="password">Password:</label>
             <input
               type="password"
               name="password"

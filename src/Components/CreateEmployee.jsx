@@ -9,13 +9,12 @@ const CreateEmployee = () => {
   };
   const fetchData = async () => {
     const payload={
-        Emp_FirstName:"sathya",
-        Emp_LastName:"Thangavel",
-        Email:"sathya@gmail.com",
-        Emp_batch:"1234",
-        Emp_designation:"Developer",
-        Emp_role:"Employee",
-        Password:"12345",
+        firstname:"sathya",
+        lastname:"Thangavel",
+        designation:"Developer",
+        role:"Employee",
+        email:"sathya@gmail.com",
+        password:"12345",
     };
 
     axios.post("https://nodejsday4.onrender.com/api/createemployee", payload)
