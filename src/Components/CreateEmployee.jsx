@@ -17,7 +17,7 @@ const CreateEmployee = () => {
         password:"12345",
     };
 
-    axios.post("https://nodejsday4.onrender.com/api/createemployee", payload)
+    axios.post("https://employee-profile-management-system.onrender.com/api/employee/createemployee", payload)
     .then((res)=>{
         setCreateData(res.data.result)
         setCreateMsg(res.data.message)

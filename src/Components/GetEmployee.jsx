@@ -9,7 +9,7 @@ const GetEmployee = () => {
     }, []);
     const fetchData = async () => {
       await axios
-        .get("https://nodejsday4.onrender.com/api/getallemployee")
+        .get("https://employee-profile-management-system.onrender.com/api/employee/getallemployee")
         .then((res) => {
           setgetcallData(res.data.result);
           setgetcallMsg(res.data.message);
