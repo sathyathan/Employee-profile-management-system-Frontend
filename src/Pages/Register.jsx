@@ -18,7 +18,7 @@ const Register = () => {
      e.preventDefault();
      const payload={firstname,lastname,designation,role,email,password};
     
-    await axios.post("http://localhost:5000/api/employee/register-employee",payload)
+    await axios.post("https://employee-profile-management-system.onrender.com/api/employee/register-employee",payload)
     .then((res)=>setMsg(res.data.message))
     .catch((error)=>{
    console.log(error);

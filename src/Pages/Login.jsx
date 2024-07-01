@@ -12,7 +12,7 @@ const Login = () => {
      e.preventDefault();
      const payload={email,password};
     
-    await axios.post("http://localhost:5000/api/employee/login-employee",payload)
+    await axios.post("https://employee-profile-management-system.onrender.com/api/employee/login-employee",payload)
     .then((res)=>console.log(res.data.message))
     .catch((error)=>{
    console.log(error);
