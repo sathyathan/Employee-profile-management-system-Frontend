@@ -38,6 +38,12 @@ const Navbar = () => {
                   Login
                 </Link>
                 </li>
+                <li className="nav-item ms-0 ms-md-3">
+                <Link to="/attendance" className="nav-link" aria-current="page">
+                  Attendance
+                </Link>
+                </li>
+ 
             </ul>
           </div>
         </div>

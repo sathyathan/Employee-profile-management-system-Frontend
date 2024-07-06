@@ -6,6 +6,7 @@ import Login from './Pages/Login';
 import Admindashboard from './Pages/Admindashboard';
 import CreateEmployee from './Components/CreateEmployee';
 import GetEmployee from './Components/GetEmployee';
+import Attendance from './Pages/Attendance';
 
 
   const App = () => {
@@ -19,6 +20,7 @@ import GetEmployee from './Components/GetEmployee';
       <Route path='/Register'element={<Register/>}/>
       <Route path='/Login'element={<Login />}/>
       <Route path='/LandingPage'element={<LandingPage/>}/>
+      <Route path='/Attendance'element={<Attendance/>}/>
   
       </Routes>
       </BrowserRouter>

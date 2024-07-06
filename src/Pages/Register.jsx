@@ -114,7 +114,7 @@ navigate("/login");
           <button type="submit">Register</button>
         </fieldset>
       </form>
-      <br />
+    
         
     
         </div>
