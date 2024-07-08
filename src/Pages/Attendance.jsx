@@ -14,7 +14,7 @@ const Attendance = () => {
      e.preventDefault();
      const payload={email,password,present};
     
-    await axios.post("https://employee-profile-management-system.onrender.com/api/employee/attendance-employee",payload)
+    await axios.post("http://localhost:5000/api/employee/attendance-employee",payload)
   .then((res)=>{console.log(res.data.message)
   setPresent(res.data.message)})
     .catch((error)=>{
