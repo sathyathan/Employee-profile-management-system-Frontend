@@ -44,10 +44,12 @@ const GetEmployee = () => {
                 <h6 className="card-subtitle mb-2 text-body-secondary">
                   {ele.password}
                 </h6>
+                
                 <h6 className="card-subtitle mb-2 text-body-secondary">
                   {ele.present}
                 </h6>
-
+                
+                
 
               </div>
             </div>

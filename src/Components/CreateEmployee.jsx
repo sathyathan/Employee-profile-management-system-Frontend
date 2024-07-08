@@ -15,7 +15,9 @@ const CreateEmployee = () => {
         role:"Employee",
         email:"sathya@gmail.com",
         password:"12345",
-        present:"true",
+        present:"present",
+        
+        
     };
 
     axios.post("https://employee-profile-management-system.onrender.com/api/employee/createemployee", payload)

@@ -6,17 +6,19 @@ const Attendance = () => {
     const[email,setEmail]=useState('')
     const[password,setPassword]=useState('')
     const[present,setPresent]=useState('')
+    const[absent,setAbsent]=useState('')
 
     const[msg,setMsg]=useState('')
     const navigate=useNavigate();
 
     const handleSubmit=async(e)=>{
      e.preventDefault();
-     const payload={email,password,present};
+     const payload={email,password,present,absent};
     
     await axios.post("http://localhost:5000/api/employee/attendance-employee",payload)
   .then((res)=>{console.log(res.data.message)
-  setPresent(res.data.message)})
+  setPresent(res.data.message)
+setAbsent(res.data.message)})
     .catch((error)=>{
    console.log(error);
     setMsg(error.data.message);
@@ -59,9 +61,10 @@ navigate("/landingpage");
                 onChange={(e) => setPassword(e.target.value)}
               />
             </p>
-            
-              
-            <button type="submit">present</button>
+            <input type="radio"id="present"name="attendance" value="present"></input>
+              <label for="present">Present</label>
+                            <br></br><br></br>
+            <button type="submit">submit</button>
     
           
             
