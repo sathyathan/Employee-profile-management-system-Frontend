@@ -6,20 +6,24 @@ const Attendance = () => {
     const[email,setEmail]=useState('')
     const[password,setPassword]=useState('')
     const[present,setPresent]=useState('')
-    const[absent,setAbsent]=useState('')
+    const [selectedValue, setSelectedValue] = useState('');
+      
+    
 
     const[msg,setMsg]=useState('')
     const navigate=useNavigate();
-
+    const handleChange = (event) => {
+      setPresent(event.target.value);
+     };
     const handleSubmit=async(e)=>{
      e.preventDefault();
-     const payload={email,password,present,absent};
+     const payload={email,password,present};
+     console.log(payload);
     
-    await axios.post("http://localhost:5000/api/employee/attendance-employee",payload)
-  .then((res)=>{console.log(res.data.message)
-  setPresent(res.data.message)
-setAbsent(res.data.message)})
-    .catch((error)=>{
+    await axios.post("https://employee-profile-management-system.onrender.com/api/employee/attendance-employee",payload)
+  .then((res)=>console.log(res.data.message))
+  setMsg(res.data.message)
+  .catch((error)=>{
    console.log(error);
     setMsg(error.data.message);
 
@@ -61,13 +65,33 @@ navigate("/landingpage");
                 onChange={(e) => setPassword(e.target.value)}
               />
             </p>
-            <input type="radio"id="present"name="attendance" value="present"></input>
-              <label for="present">Present</label>
-                            <br></br><br></br>
-            <button type="submit">submit</button>
-    
-          
             
+        <input
+          type="radio"
+          id="present"
+          name="attendance"
+          value="present"
+          checked={present === 'present'}
+          onChange={handleChange}
+        />
+        <label htmlFor="present">Present</label>
+        <br />
+        <input
+          type="radio"
+          id="absent"
+          name="attendance"
+          value="absent"
+          checked={present === 'absent'}
+          onChange={handleChange}
+/>
+        <label htmlFor="absent">Absent</label>
+        <br /><br />
+
+        <button type="submit">Submit</button>
+      
+
+            
+             
           </fieldset>
         </form>
         <br/>

@@ -9,15 +9,15 @@ const CreateEmployee = () => {
   };
   const fetchData = async () => {
     const payload={
-        firstname:"sathya",
-        lastname:"Thangavel",
-        designation:"Developer",
-        role:"Employee",
-        email:"sathya@gmail.com",
-        password:"12345",
-        present:"present",
-        
-        
+        firstname:"anu",
+        lastname:"t",
+        designation:"developer",
+        role:"employee",
+        email:"anu123@gmail.com",
+        password:"0987",
+        present:"true",
+        absent:"false",
+       
     };
 
     axios.post("https://employee-profile-management-system.onrender.com/api/employee/createemployee", payload)
