@@ -9,12 +9,12 @@ const CreateEmployee = () => {
   };
   const fetchData = async () => {
     const payload={
-        firstname:"anu",
-        lastname:"t",
-        designation:"developer",
+        firstname:"nehru",
+        lastname:"thangavel",
+        designation:"ui developer",
         role:"employee",
-        email:"anu123@gmail.com",
-        password:"0987",
+        email:"nehru12@gmail.com",
+        password:"1256",
         present:"true",
         absent:"false",
        
