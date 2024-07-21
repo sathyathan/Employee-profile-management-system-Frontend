@@ -7,6 +7,10 @@ import Admindashboard from './Pages/Admindashboard';
 import CreateEmployee from './Components/CreateEmployee';
 import GetEmployee from './Components/GetEmployee';
 import Attendance from './Pages/Attendance';
+import Location from './Pages/Location';
+import Account from './Pages/Account';
+import Emptype from './Pages/Emptype';
+
 
 
   const App = () => {
@@ -21,6 +25,9 @@ import Attendance from './Pages/Attendance';
       <Route path='/Login'element={<Login />}/>
       <Route path='/LandingPage'element={<LandingPage/>}/>
       <Route path='/Attendance'element={<Attendance/>}/>
+      <Route path='/Location'element={<Location/>}/>
+      <Route path='/Account'element={<Account/>}/>
+      <Route path='/Emptype'element={<Emptype/>}/>
   
       </Routes>
       </BrowserRouter>

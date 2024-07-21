@@ -20,7 +20,7 @@ const Login = () => {
 
     });
     setTimeout(()=>{
-navigate("/landingpage");
+navigate("/attendance");
     },1000)
 
 };

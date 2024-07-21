@@ -17,6 +17,12 @@ const CreateEmployee = () => {
         password:"1256",
         present:"true",
         absent:"false",
+        location:"chennai",
+        phone:"9876543210",
+        dob:"1990-01-01",
+        address:"chennai",
+        department:"software development",
+        salary:10000,
        
     };
 

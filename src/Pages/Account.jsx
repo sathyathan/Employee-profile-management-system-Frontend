@@ -2,22 +2,22 @@ import axios from "axios";
 import React, { useState } from "react";
 import {Link,useNavigate } from "react-router-dom";
 
-const Attendance = () => {
+const Account = () => {
     const[email,setEmail]=useState('')
     const[password,setPassword]=useState('')
-    const[present,setPresent]=useState('')
+    const[account,setAccount]=useState('')
     const [selectedValue, setSelectedValue] = useState('');
     const[msg,setMsg]=useState('')
     const navigate=useNavigate();
     const handleChange = (event) => {
-      setPresent(event.target.value);
+      setAccount(event.target.value);
      };
     const handleSubmit=async(e)=>{
      e.preventDefault();
-     const payload={email,password,present};
+     const payload={email,password,account};
      console.log(payload);
     
-    await axios.post("https://employee-profile-management-system.onrender.com/api/employee/attendance-employee",payload)
+    await axios.post("http://localhost:5000/api/employee/account-employee",payload)
   .then((res)=>console.log(res.data.message))
   
   .catch((error)=>{
@@ -26,7 +26,7 @@ const Attendance = () => {
 
     });
     setTimeout(()=>{
-      navigate("/Location");
+      navigate("/Emptype");
           },1000)
       
     
@@ -37,7 +37,7 @@ const Attendance = () => {
         <form onSubmit={handleSubmit}>
           <fieldset>
             <legend>
-              <strong>Employee Attendance
+              <strong>Employee Account
               </strong>
             </legend>
             <p>
@@ -67,23 +67,23 @@ const Attendance = () => {
             
         <input
           type="radio"
-          id="present"
-          name="attendance"
-          value="present"
-          checked={present === 'present'}
+          id="saving"
+          name="account"
+          value="saving"
+          checked={account=== 'saving'}
           onChange={handleChange}
         />
-        <label htmlFor="present">Present</label>
+        <label htmlFor="saving">Saving</label>
         <br />
         <input
           type="radio"
-          id="absent"
-          name="attendance"
-          value="absent"
-          checked={present === 'absent'}
+          id="current"
+          name="Account"
+          value="current"
+          checked={account === 'current'}
           onChange={handleChange}
 />
-        <label htmlFor="absent">Absent</label>
+        <label htmlFor="current">Current</label>
         <br /><br />
 
         <button type="submit">Submit</button>
@@ -101,4 +101,4 @@ const Attendance = () => {
     );
 };
 
-export default Attendance;
+export default Account;

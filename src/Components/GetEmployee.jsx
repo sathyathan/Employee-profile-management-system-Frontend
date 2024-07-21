@@ -51,6 +51,18 @@ const GetEmployee = () => {
                 <h6 className="card-subtitle mb-2 text-body-secondary">
                   {ele.absent}
                 </h6>
+                <h6 className="card-subtitle mb-2 text-body-secondary">
+                  {ele.location}
+                </h6>
+                <h6 className="card-subtitle mb-2 text-body-secondary">
+                  {ele.account}
+                </h6>
+                <h6 className="card-subtitle mb-2 text-body-secondary">
+                  {ele.Emptype}
+                </h6>
+                
+                
+                
                 
                 
                 

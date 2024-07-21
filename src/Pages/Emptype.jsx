@@ -2,22 +2,23 @@ import axios from "axios";
 import React, { useState } from "react";
 import {Link,useNavigate } from "react-router-dom";
 
-const Attendance = () => {
+const Emptype = () => {
+    const[username,setUsername]=useState('')
     const[email,setEmail]=useState('')
     const[password,setPassword]=useState('')
-    const[present,setPresent]=useState('')
+    const[emptype,setEmpType]=useState('')
     const [selectedValue, setSelectedValue] = useState('');
     const[msg,setMsg]=useState('')
     const navigate=useNavigate();
     const handleChange = (event) => {
-      setPresent(event.target.value);
+      setEmpType(event.target.value);
      };
     const handleSubmit=async(e)=>{
      e.preventDefault();
-     const payload={email,password,present};
+     const payload={username,email,password,emptype};
      console.log(payload);
     
-    await axios.post("https://employee-profile-management-system.onrender.com/api/employee/attendance-employee",payload)
+    await axios.post("http://localhost:5000/api/employee/emp-type",payload)
   .then((res)=>console.log(res.data.message))
   
   .catch((error)=>{
@@ -26,7 +27,7 @@ const Attendance = () => {
 
     });
     setTimeout(()=>{
-      navigate("/Location");
+      navigate("/landingpage");
           },1000)
       
     
@@ -37,9 +38,22 @@ const Attendance = () => {
         <form onSubmit={handleSubmit}>
           <fieldset>
             <legend>
-              <strong>Employee Attendance
+              <strong>Employee Type
               </strong>
             </legend>
+            <p>
+              <label htmlFor="username">Username:</label>
+              <input
+                type="username"
+                name="username"
+                id="username"
+                placeholder="Enter Your Username"
+                required
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </p>
+            
             <p>
               <label htmlFor="email">Email:</label>
               <input
@@ -67,23 +81,32 @@ const Attendance = () => {
             
         <input
           type="radio"
-          id="present"
-          name="attendance"
-          value="present"
-          checked={present === 'present'}
+          id="intern"
+          name="type"
+          value="intern"
+          checked={emptype=== 'intern'}
           onChange={handleChange}
         />
-        <label htmlFor="present">Present</label>
+        <label htmlFor="intern">Intern</label>
         <br />
         <input
           type="radio"
-          id="absent"
-          name="attendance"
-          value="absent"
-          checked={present === 'absent'}
+          id="junior"
+          name="Emptype"
+          value="junior"
+          checked={emptype === 'junior'}
           onChange={handleChange}
 />
-        <label htmlFor="absent">Absent</label>
+        <label htmlFor="junior">Junior</label>
+        <br />
+        <input
+          type="radio"
+          id="senior"
+          name="Emptype"
+          value="senior"
+          checked={emptype === 'senior'}
+          onChange={handleChange}/>
+        <label htmlFor="senior">Senior</label>
         <br /><br />
 
         <button type="submit">Submit</button>
@@ -101,4 +124,4 @@ const Attendance = () => {
     );
 };
 
-export default Attendance;
+export default Emptype;

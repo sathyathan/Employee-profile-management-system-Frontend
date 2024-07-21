@@ -43,6 +43,24 @@ const Navbar = () => {
                   Attendance
                 </Link>
                 </li>
+                <li className="nav-item ms-0 ms-md-3">
+                <Link to="/Location" className="nav-link" aria-current="page">
+                  Location
+                </Link>
+                </li>
+                <li className="nav-item ms-0 ms-md-3">
+                <Link to="/Account" className="nav-link" aria-current="page">
+                  Account
+                </Link>
+                </li>
+                <li className="nav-item ms-0 ms-md-3">
+                <Link to="/Emptype" className="nav-link" aria-current="page">
+                  Emptype
+                </Link>
+                </li>
+ 
+ 
+ 
  
             </ul>
           </div>

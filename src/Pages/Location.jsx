@@ -2,22 +2,22 @@ import axios from "axios";
 import React, { useState } from "react";
 import {Link,useNavigate } from "react-router-dom";
 
-const Attendance = () => {
+const Location = () => {
     const[email,setEmail]=useState('')
     const[password,setPassword]=useState('')
-    const[present,setPresent]=useState('')
+    const[location,setLocation]=useState('')
     const [selectedValue, setSelectedValue] = useState('');
     const[msg,setMsg]=useState('')
     const navigate=useNavigate();
     const handleChange = (event) => {
-      setPresent(event.target.value);
+      setLocation(event.target.value);
      };
     const handleSubmit=async(e)=>{
      e.preventDefault();
-     const payload={email,password,present};
+     const payload={email,password,location};
      console.log(payload);
     
-    await axios.post("https://employee-profile-management-system.onrender.com/api/employee/attendance-employee",payload)
+    await axios.post("http://localhost:5000/api/employee/location-employee",payload)
   .then((res)=>console.log(res.data.message))
   
   .catch((error)=>{
@@ -26,7 +26,7 @@ const Attendance = () => {
 
     });
     setTimeout(()=>{
-      navigate("/Location");
+      navigate("/account");
           },1000)
       
     
@@ -37,7 +37,7 @@ const Attendance = () => {
         <form onSubmit={handleSubmit}>
           <fieldset>
             <legend>
-              <strong>Employee Attendance
+              <strong>Employee Location
               </strong>
             </legend>
             <p>
@@ -67,31 +67,48 @@ const Attendance = () => {
             
         <input
           type="radio"
-          id="present"
-          name="attendance"
-          value="present"
-          checked={present === 'present'}
+          id="chennai"
+          name="location"
+          value="chennai"
+          checked={location === 'chennai'}
           onChange={handleChange}
         />
-        <label htmlFor="present">Present</label>
+        <label htmlFor="chennai">Chennai</label>
         <br />
         <input
           type="radio"
-          id="absent"
-          name="attendance"
-          value="absent"
-          checked={present === 'absent'}
+          id="madurai"
+          name="location"
+          value="madurai"
+          checked={location === 'madurai'}
+          onChange={handleChange}
+        />
+        <label htmlFor="madurai">Madurai</label>
+        <br />
+        <input
+          type="radio"
+          id="trichy"
+          name="location"
+          value="trichy"
+          checked={location === 'trichy'}
+          onChange={handleChange}
+        />
+        <label htmlFor="trichy">Trichy</label>
+        <br />
+    
+        <input
+          type="radio"
+          id="covai"
+          name="location"
+          value="covai"
+          checked={location === 'covai'}
           onChange={handleChange}
 />
-        <label htmlFor="absent">Absent</label>
+        <label htmlFor="covai">Covai</label>
         <br /><br />
 
         <button type="submit">Submit</button>
-      
-
-            
-             
-          </fieldset>
+        </fieldset>
         </form>
         <br/>
         
@@ -101,4 +118,4 @@ const Attendance = () => {
     );
 };
 
-export default Attendance;
+export default Location;
