@@ -17,7 +17,7 @@ const Location = () => {
      const payload={email,password,location};
      console.log(payload);
     
-    await axios.post("http://localhost:5000/api/employee/location-employee",payload)
+    await axios.post("https://employee-profile-management-system.onrender.com/api/employee/location-employee",payload)
   .then((res)=>console.log(res.data.message))
   
   .catch((error)=>{
