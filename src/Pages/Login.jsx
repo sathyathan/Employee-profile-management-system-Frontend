@@ -62,8 +62,6 @@ navigate("/attendance");
           </fieldset>
         </form>
         <br/>
-        
-        <Link to="/Back">Back</Link>
           </div>
         
     );
