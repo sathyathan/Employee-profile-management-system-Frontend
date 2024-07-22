@@ -15,14 +15,11 @@ const CreateEmployee = () => {
         role:"employee",
         email:"nehru12@gmail.com",
         password:"1256",
-        present:"true",
-        absent:"false",
+        attendance:"present",
         location:"chennai",
-        phone:"9876543210",
-        dob:"1990-01-01",
-        address:"chennai",
-        department:"software development",
-        salary:10000,
+        account:"saving",
+        emptype:"junior",
+        
        
     };
 
